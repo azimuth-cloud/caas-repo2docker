@@ -21,6 +21,17 @@ parameters:
       min: 10
     immutable: true
 
+  - name: cluster_flavor
+    kind: "cloud.size"
+    label: "Jupyter Notebook size"
+    description: The size of the Jupyter Notebook node.
+    required: true
+    default: null
+    immutable: true
+    options:
+      min_ram: 1024
+      min_disk: 10
+
 usage_template: |-
   The Jupyter Notebook repository for this this cluster can be accessed from the services list.
 
