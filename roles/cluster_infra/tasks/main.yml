@@ -16,6 +16,14 @@
   include_role:
     name: stackhpc.terraform.install
 
+- name: Write backend configuration
+  copy:
+    content: |
+      terraform {
+        backend "{{ terraform_backend_type }}" { }
+      }
+    dest: "{{ terraform_project_path }}/backend.tf"
+
 - name: Provision infrastructure
   community.general.terraform:
     binary_path: "{{ terraform_binary_path or omit }}"
