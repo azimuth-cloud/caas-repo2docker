@@ -1,0 +1,27 @@
+# We need to convert the floating IP id to an address for Terraform
+- name: Make Terraform project directory
+  file:
+    path: "{{ terraform_project_path }}"
+    state: directory
+
+- name: Template Terraform files into project directory
+  template:
+    src: "{{ item }}.j2"
+    dest: "{{ terraform_project_path }}/{{ item }}"
+  loop:
+    - providers.tf
+    - resources.tf
+
+- name: Install Terraform binary
+  include_role:
+    name: stackhpc.terraform.install
+
+- name: Provision infrastructure
+  community.general.terraform:
+    binary_path: "{{ terraform_binary_path or omit }}"
+    project_path: "{{ terraform_project_path }}"
+    state: "{{ terraform_state }}"
+    backend_config: "{{ terraform_backend_config }}"
+    force_init: yes
+    init_reconfigure: yes
+    variables: "{{ terraform_variables }}"

@@ -1,0 +1,30 @@
+name: "repo2docker"
+label: "Jupyter Notebook"
+description: >- 
+  Interactively explore Jupyter Notebooks from an existing GitHub, GitLab, 
+  Zenodo or Figshare repository. Powered by repo2docker.
+logo: https://github.com/stackhpc/caas-repo2docker/raw/main/assets/jupyter.svg
+
+parameters:
+  - name: cluster_repository
+    label: "Notebook Repository"
+    description: "Jupyter notebook source repository."
+    kind: "string"
+    immutable: true
+
+  - name: cluster_volume_size
+    label: "Volume size (GB)"
+    description: "The size of the data volume for each node. The data volume will be available at /data"
+    kind: "integer"
+    default: 10
+    options:
+      min: 10
+    immutable: true
+
+usage_template: |-
+  The Jupyter Notebook repository for this this cluster can be accessed from the services list.
+
+services:
+  - name: repo2docker
+    label: Jupyter Notebook
+    icon_url: https://github.com/stackhpc/caas-repo2docker/raw/main/assets/jupyter.svg

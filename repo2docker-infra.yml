@@ -1,0 +1,12 @@
+---
+
+# Provision the infrastructure using Terraform
+- name: Provision infrastructure
+  hosts: openstack
+  pre_tasks:
+    - name: Check that Notebook repository URL exists 
+      uri:
+        url: "{{ cluster_repository }}"
+
+  roles:
+    - cluster_infra
