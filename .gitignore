@@ -8,3 +8,7 @@ inventory.*
 __pycache__
 terraform/backend.tf
 inventory
+/clouds.yaml
+/bin
+/collections
+/terraform

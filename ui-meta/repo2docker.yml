@@ -25,8 +25,6 @@ parameters:
     kind: "cloud.size"
     label: "Jupyter Notebook size"
     description: The size of the Jupyter Notebook node.
-    required: true
-    default: null
     immutable: true
     options:
       min_ram: 1024
