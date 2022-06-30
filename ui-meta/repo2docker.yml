@@ -3,7 +3,7 @@ label: "Jupyter Notebook"
 description: >- 
   Interactively explore Jupyter Notebooks from an existing GitHub, GitLab, 
   Zenodo or Figshare repository. Powered by repo2docker.
-logo: https://github.com/stackhpc/caas-repo2docker/raw/main/assets/jupyter.svg
+logo: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png
 
 parameters:
   - name: cluster_repository
