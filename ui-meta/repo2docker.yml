@@ -8,19 +8,14 @@ logo: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Log
 parameters:
   - name: cluster_repository
     label: "Notebook Repository"
-    description: "Jupyter notebook source repository."
+    description: >-
+      "Jupyter notebook source repository 
+      compatible with [repo2docker](https://repo2docker.readthedocs.io/en/latest/usage.html#using-repo2docker). 
+      Examples are available from [Binder](https://github.com/binder-examples)."
+    placeholder: "e.g. https://github.com/binder-examples/voila"
     kind: "string"
     immutable: true
-
-  - name: cluster_volume_size
-    label: "Volume size (GB)"
-    description: "The size of the data volume for each node. The data volume will be available at /data"
-    kind: "integer"
-    default: 10
-    options:
-      min: 10
-    immutable: true
-
+  
   - name: cluster_flavor
     kind: "cloud.size"
     label: "Jupyter Notebook size"
@@ -29,6 +24,17 @@ parameters:
     options:
       min_ram: 1024
       min_disk: 10
+  
+  - name: cluster_volume_size
+    label: "Volume size (GB)"
+    description: >- 
+      "The size of the data volume for each node. 
+      The data volume will be available at /data"
+    kind: "integer"
+    default: 10
+    options:
+      min: 10
+    immutable: true
 
 usage_template: |-
   The Jupyter Notebook repository for this this cluster can be accessed from the services list.
