@@ -23,8 +23,8 @@ parameters:
     description: The size of the Jupyter Notebook node.
     immutable: true
     options:
-      min_ram: 1024
-      min_disk: 10
+      min_ram: 4096
+      min_disk: 20
   
   - name: cluster_volume_size
     label: "Volume size (GB)"
