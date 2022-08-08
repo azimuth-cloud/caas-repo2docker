@@ -7,6 +7,7 @@
     - name: Check that Notebook repository URL exists 
       uri:
         url: "{{ cluster_repository }}"
+      when: (cluster_state | default('present')) == 'present'
   roles:
     - cluster_infra
   post_tasks:   
