@@ -31,7 +31,7 @@ parameters:
     description: |-
       The size of the data volume for the node.  
       The data volume will be available at `/data`.
-    kind: "integer"
+    kind: "cloud.volume_size"
     default: 10
     options:
       min: 10
