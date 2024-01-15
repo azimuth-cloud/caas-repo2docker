@@ -37,6 +37,14 @@ parameters:
       min: 10
     immutable: true
 
+  # This field exists so that the Zenith volume can be accounted for in quota calculations
+  # It is hidden in the user form
+  - name: zenith_volume_size
+    kind: cloud.volume_size
+    hidden: true
+    default: 1
+    immutable: true
+
 usage_template: |-
   The Jupyter Notebook repository for this this cluster can be accessed from the services list.
 
