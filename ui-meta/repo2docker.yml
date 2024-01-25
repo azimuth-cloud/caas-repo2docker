@@ -38,7 +38,7 @@ parameters:
     immutable: true
 
 usage_template: |-
-  The Jupyter Notebook repository for this this cluster can be accessed from the services list.
+  The Jupyter Notebook repository for this cluster can be accessed from the services list.
 
 services:
   - name: repo2docker
