@@ -2,7 +2,7 @@
 
 - name: Install Terraform binary
   include_role:
-    name: stackhpc.terraform.install
+    name: azimuth_cloud.terraform.install
 
 - name: Make Terraform project directory
   file:
