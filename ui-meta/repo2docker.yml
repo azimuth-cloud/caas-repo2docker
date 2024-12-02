@@ -15,7 +15,7 @@ parameters:
     kind: "string"
     immutable: true
     options:
-      placeholder: "e.g. https://github.com/binder-examples/voila"
+      placeholder: "e.g. https://github.com/binder-examples/conda"
   
   - name: cluster_flavor
     kind: "cloud.size"
