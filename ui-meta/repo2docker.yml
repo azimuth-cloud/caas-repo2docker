@@ -1,22 +1,22 @@
 name: "repo2docker"
 label: "Jupyter Notebook"
-description: >- 
-  Interactively explore Jupyter Notebooks from an existing GitHub, GitLab, 
+description: >-
+  Interactively explore Jupyter Notebooks from an existing GitHub, GitLab,
   Zenodo or Figshare repository. Powered by repo2docker.
-logo: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png
+logo: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png # yamllint disable-line rule:line-length
 
 parameters:
   - name: cluster_repository
     label: "Notebook Repository"
     description: |-
       Jupyter notebook source repository compatible with
-      [repo2docker](https://repo2docker.readthedocs.io/en/latest/usage.html#using-repo2docker).  
+      [repo2docker](https://repo2docker.readthedocs.io/en/latest/usage.html#using-repo2docker).
       Examples are available from [Binder](https://github.com/binder-examples).
     kind: "string"
     immutable: true
     options:
       placeholder: "e.g. https://github.com/binder-examples/conda"
-  
+
   - name: cluster_flavor
     kind: "cloud.size"
     label: "Jupyter Notebook size"
@@ -25,11 +25,11 @@ parameters:
     options:
       min_ram: 4096
       min_disk: 20
-  
+
   - name: cluster_volume_size
     label: "Volume size (GB)"
     description: |-
-      The size of the data volume for the node.  
+      The size of the data volume for the node.
       The data volume will be available at `/data`.
     kind: "cloud.volume_size"
     default: 10
@@ -51,7 +51,7 @@ usage_template: |-
 services:
   - name: repo2docker
     label: Jupyter Notebook
-    icon_url: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png
+    icon_url: https://raw.githubusercontent.com/jupyter/design/master/logos/Square%20Logo/squarelogo-greytext-orangebody-greymoons/squarelogo-greytext-orangebody-greymoons.png # yamllint disable-line rule:line-length
   - name: monitoring
     label: Monitoring
     icon_url: https://raw.githubusercontent.com/cncf/artwork/master/projects/prometheus/icon/color/prometheus-icon-color.png
