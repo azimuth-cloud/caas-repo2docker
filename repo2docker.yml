@@ -4,15 +4,15 @@
 - name: Provision infrastructure
   hosts: openstack
   pre_tasks:
-    - name: Check that Notebook repository URL exists 
-      uri:
+    - name: Check that Notebook repository URL exists
+      ansible.builtin.uri:
         url: "{{ cluster_repository }}"
       when: (cluster_state | default('present')) == 'present'
   roles:
     - cluster_infra
-  post_tasks:   
+  post_tasks:
     - name: Wait for Jupyter notebook to become available
-      uri:
+      ansible.builtin.uri:
         url: "http://{{ zenith_fqdn_repo2docker }}"
         method: GET
         follow_redirects: safe
@@ -29,9 +29,9 @@
       delay: 10
       until: "repo2docker_uri is not failed"
       when: (cluster_state | default('present')) == 'present'
-    
+
     - name: Wait for Monitoring to become available
-      uri:
+      ansible.builtin.uri:
         url: "http://{{ zenith_fqdn_monitoring }}"
         method: GET
         follow_redirects: safe
